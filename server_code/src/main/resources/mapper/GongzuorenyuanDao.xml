@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.GongzuorenyuanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.GongzuorenyuanEntity" id="gongzuorenyuanMap">
+        <result property="gongzuorenyuanzhanghao" column="gongzuorenyuanzhanghao"/>
+        <result property="gongzuorenyuanmima" column="gongzuorenyuanmima"/>
+        <result property="gongzuorenyuanxingming" column="gongzuorenyuanxingming"/>
+        <result property="touxiang" column="touxiang"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="shoujihaoma" column="shoujihaoma"/>
+        <result property="shhf" column="shhf"/>
+        <result property="sfsh" column="sfsh"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.GongzuorenyuanView" >
+
+		SELECT  gongzuorenyuan.* FROM gongzuorenyuan  gongzuorenyuan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.GongzuorenyuanView" >
+		SELECT * FROM gongzuorenyuan  gongzuorenyuan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
